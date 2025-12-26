@@ -1,0 +1,124 @@
+/* CrestMediaTekAI Logo Animation */
+.logo-animated .letter {
+    display: inline-block;
+    position: relative;
+}
+
+/* C letter animation */
+.logo-animated .letter-C {
+    animation: logoFadeScaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.85);
+}
+
+@keyframes logoFadeScaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Remaining letters - alternating from top and bottom */
+.logo-animated .letter-r {
+    animation: logoSlideFromTop 0.5s ease-in-out 0.68s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-e {
+    animation: logoSlideFromBottom 0.5s ease-in-out 0.76s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.logo-animated .letter-s {
+    animation: logoSlideFromTop 0.5s ease-in-out 0.84s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-t {
+    animation: logoSlideFromBottom 0.5s ease-in-out 0.92s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.logo-animated .letter-M {
+    animation: logoSlideFromTop 0.5s ease-in-out 1.0s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-e2 {
+    animation: logoSlideFromBottom 0.5s ease-in-out 1.08s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.logo-animated .letter-d {
+    animation: logoSlideFromTop 0.5s ease-in-out 1.16s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-i {
+    animation: logoSlideFromBottom 0.5s ease-in-out 1.24s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.logo-animated .letter-a {
+    animation: logoSlideFromTop 0.5s ease-in-out 1.32s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-T {
+    animation: logoSlideFromBottom 0.5s ease-in-out 1.4s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.logo-animated .letter-e3 {
+    animation: logoSlideFromTop 0.5s ease-in-out 1.48s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-k {
+    animation: logoSlideFromBottom 0.5s ease-in-out 1.56s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.logo-animated .letter-A {
+    animation: logoSlideFromTop 0.5s ease-in-out 1.64s forwards;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.logo-animated .letter-I {
+    animation: logoSlideFromBottom 0.5s ease-in-out 1.72s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+@keyframes logoSlideFromTop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoSlideFromBottom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Only animate on homepage load */
+.logo-animated.animate-once .letter {
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

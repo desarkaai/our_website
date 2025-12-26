@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrestMediaTekAI Logo Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            text-align: center;
+            font-size: 120px;
+            font-weight: 800;
+            color: #E53935;
+            letter-spacing: -2px;
+            position: relative;
+        }
+
+        .letter {
+            display: inline-block;
+            position: relative;
+        }
+
+        /* C letter animation */
+        .letter-C {
+            animation: fadeScaleIn 0.6s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.85);
+        }
+
+        @keyframes fadeScaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Remaining letters - alternating from top and bottom */
+        .letter-r {
+            animation: slideFromTop 0.5s ease-in-out 0.68s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-e {
+            animation: slideFromBottom 0.5s ease-in-out 0.76s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .letter-s {
+            animation: slideFromTop 0.5s ease-in-out 0.84s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-t {
+            animation: slideFromBottom 0.5s ease-in-out 0.92s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .letter-M {
+            animation: slideFromTop 0.5s ease-in-out 1.0s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-e2 {
+            animation: slideFromBottom 0.5s ease-in-out 1.08s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .letter-d {
+            animation: slideFromTop 0.5s ease-in-out 1.16s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-i {
+            animation: slideFromBottom 0.5s ease-in-out 1.24s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .letter-a {
+            animation: slideFromTop 0.5s ease-in-out 1.32s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-T {
+            animation: slideFromBottom 0.5s ease-in-out 1.4s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .letter-e3 {
+            animation: slideFromTop 0.5s ease-in-out 1.48s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-k {
+            animation: slideFromBottom 0.5s ease-in-out 1.56s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .letter-A {
+            animation: slideFromTop 0.5s ease-in-out 1.64s forwards;
+            opacity: 0;
+            transform: translateY(-18px);
+        }
+
+        .letter-I {
+            animation: slideFromBottom 0.5s ease-in-out 1.72s forwards;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        @keyframes slideFromTop {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideFromBottom {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Optional: Add a subtle glow effect at the end */
+        .logo-container {
+            animation: finalGlow 0.4s ease-in-out 2.0s forwards;
+        }
+
+        @keyframes finalGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 0px rgba(229, 57, 53, 0));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px rgba(229, 57, 53, 0.3));
+            }
+        }
+
+        /* Replay button */
+        .replay-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            padding: 15px 30px;
+            background-color: #E53935;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+        }
+
+        .replay-btn:hover {
+            background-color: #D32F2F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(229, 57, 53, 0.4);
+        }
+
+        .replay-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo-container" id="logo">
+        <span class="letter letter-C">C</span><span class="letter letter-r">r</span><span
+            class="letter letter-e">e</span><span class="letter letter-s">s</span><span
+            class="letter letter-t">t</span><span class="letter letter-M">M</span><span
+            class="letter letter-e2">e</span><span class="letter letter-d">d</span><span
+            class="letter letter-i">i</span><span class="letter letter-a">a</span><span
+            class="letter letter-T">T</span><span class="letter letter-e3">e</span><span
+            class="letter letter-k">k</span><span class="letter letter-A">A</span><span class="letter letter-I">I</span>
+    </div>
+
+    <button class="replay-btn" onclick="replayAnimation()">↻ Replay</button>
+
+    <script>
+        function replayAnimation() {
+            const logo = document.getElementById('logo');
+            const letters = logo.querySelectorAll('.letter');
+
+            // Remove and re-add the container to restart its animation
+            const parent = logo.parentNode;
+            const clone = logo.cloneNode(true);
+            parent.replaceChild(clone, logo);
+        }
+
+        // Auto-loop option (uncomment if you want continuous loop)
+        // setInterval(replayAnimation, 3000);
+    </script>
+</body>
+
+</html>
