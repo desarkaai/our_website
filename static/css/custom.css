@@ -589,3 +589,188 @@ body.custom-cursor-active [role="button"] {
   opacity: 1;
   transform: rotate(0) scale(1);
 }
+
+/* ============ DESARKA "D" LOGO ANIMATION ============ */
+
+/* Container for the animated logo */
+.desarka-logo-container {
+  text-decoration: none;
+}
+
+/* D Logo SVG Container */
+.desarka-d-logo {
+  overflow: visible;
+}
+
+/* Base segment styles - looping animation every 5 seconds */
+.d-segment {
+  opacity: 0;
+  animation: segment-drop-loop 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+/* Keyframe for the looping drop animation */
+@keyframes segment-drop-loop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  4% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+
+  6% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hold visible for most of the cycle */
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Fade out before reset */
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Staggered delays for each segment (40-60ms gaps) */
+.seg-1 {
+  animation-delay: 0ms;
+}
+
+.seg-2 {
+  animation-delay: 50ms;
+}
+
+.seg-3 {
+  animation-delay: 100ms;
+}
+
+.seg-4 {
+  animation-delay: 150ms;
+}
+
+.seg-5 {
+  animation-delay: 200ms;
+}
+
+.seg-6 {
+  animation-delay: 250ms;
+}
+
+.seg-7 {
+  animation-delay: 300ms;
+}
+
+.seg-8 {
+  animation-delay: 350ms;
+}
+
+.seg-9 {
+  animation-delay: 400ms;
+}
+
+.seg-10 {
+  animation-delay: 500ms;
+}
+
+.seg-11 {
+  animation-delay: 600ms;
+}
+
+.seg-12 {
+  animation-delay: 650ms;
+}
+
+.seg-13 {
+  animation-delay: 700ms;
+}
+
+.seg-14 {
+  animation-delay: 750ms;
+}
+
+.seg-15 {
+  animation-delay: 800ms;
+}
+
+.seg-16 {
+  animation-delay: 850ms;
+}
+
+.seg-17 {
+  animation-delay: 900ms;
+}
+
+.seg-18 {
+  animation-delay: 950ms;
+}
+
+.seg-19 {
+  animation-delay: 1000ms;
+}
+
+.seg-20 {
+  animation-delay: 1050ms;
+}
+
+.seg-21 {
+  animation-delay: 1100ms;
+}
+
+.seg-22 {
+  animation-delay: 1150ms;
+}
+
+.seg-23 {
+  animation-delay: 1200ms;
+}
+
+/* DESARKA text fade in after logo completes - looping */
+.desarka-logo-container span {
+  opacity: 0;
+  animation: text-fade-loop 5s ease-out infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes text-fade-loop {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  8% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+/* Hover effect - subtle pulse */
+.desarka-logo-container:hover .desarka-d-logo {
+  filter: drop-shadow(0 0 8px rgba(225, 39, 38, 0.4));
+  transition: filter 0.3s ease;
+}
+
+/* Dark theme support */
+body.dark-theme .desarka-logo-container span {
+  color: #ff4444;
+}
+
+body.dark-theme .d-segment {
+  fill: #ff4444;
+}

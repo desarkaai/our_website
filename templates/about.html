@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- About Hero Section -->
+<section class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-12 md:py-20">
+    <div class="text-center mb-12">
+        <h1 class="font-inter text-4xl md:text-6xl lg:text-7xl font-bold uppercase text-black mb-6 reveal-up">
+            About Us
+        </h1>
+        <p class="font-raleway text-lg md:text-xl text-[#212529] max-w-3xl mx-auto">
+            Empowering businesses with innovative technology solutions since our inception
+        </p>
+    </div>
+</section>
+
+<!-- Who We Are Section -->
+<section class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-8 md:py-12">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="font-inter text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
+                Who We Are
+            </h2>
+            <p class="font-raleway text-base md:text-lg text-[#212529] mb-4 leading-relaxed">
+                <strong>Desarka</strong> is a cutting-edge technology and software solutions agency dedicated to
+                transforming businesses through innovation. We specialize in building custom software, AI-powered
+                solutions, and digital experiences that drive real results.
+            </p>
+            <p class="font-raleway text-base md:text-lg text-[#212529] mb-4 leading-relaxed">
+                Our team of passionate developers, designers, and strategists work together to deliver solutions that
+                are not just functional, but exceptional. We believe in building long-term partnerships with our
+                clients, understanding their unique challenges, and crafting tailored solutions that exceed
+                expectations.
+            </p>
+            <p class="font-raleway text-base md:text-lg text-[#212529] leading-relaxed">
+                From startups to enterprises, we've helped businesses across industries achieve their digital
+                transformation goals. Our commitment to quality, innovation, and client success sets us apart.
+            </p>
+        </div>
+        <div class="bg-[#E12726] p-8 md:p-12 rounded-lg">
+            <h3 class="font-inter text-2xl md:text-3xl font-bold text-white mb-6">Our Mission</h3>
+            <p class="font-raleway text-base md:text-lg text-white leading-relaxed">
+                To empower businesses with innovative technology solutions that drive growth, efficiency, and
+                competitive advantage in the digital age.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="bg-gray-50 py-12 md:py-20">
+    <div class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px]">
+        <h2 class="font-inter text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-12 text-center">
+            What We Do
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Service 1 -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div class="w-14 h-14 bg-[#E12726] rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 class="font-inter text-xl font-bold text-black mb-3">Website Development</h3>
+                <p class="font-raleway text-gray-600">Custom websites built with modern technologies for optimal
+                    performance and user experience.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div class="w-14 h-14 bg-[#E12726] rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-inter text-xl font-bold text-black mb-3">App Development</h3>
+                <p class="font-raleway text-gray-600">Native and cross-platform mobile applications that deliver
+                    seamless experiences.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div class="w-14 h-14 bg-[#E12726] rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-inter text-xl font-bold text-black mb-3">AI & Automation</h3>
+                <p class="font-raleway text-gray-600">Intelligent solutions powered by AI to automate processes and
+                    drive efficiency.</p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div class="w-14 h-14 bg-[#E12726] rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M3 7h18M6 7v13a2 2 0 002 2h8a2 2 0 002-2V7" />
+                    </svg>
+                </div>
+                <h3 class="font-inter text-xl font-bold text-black mb-3">Custom Software</h3>
+                <p class="font-raleway text-gray-600">Tailored software solutions designed specifically for your
+                    business needs.</p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div class="w-14 h-14 bg-[#E12726] rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    </svg>
+                </div>
+                <h3 class="font-inter text-xl font-bold text-black mb-3">Social Media</h3>
+                <p class="font-raleway text-gray-600">Strategic social media management to grow your brand and engage
+                    audiences.</p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div class="w-14 h-14 bg-[#E12726] rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="font-inter text-xl font-bold text-black mb-3">IT Consulting</h3>
+                <p class="font-raleway text-gray-600">Expert guidance to help you make the right technology decisions
+                    for your business.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-12 md:py-20">
+    <div class="text-center">
+        <h2 class="font-inter text-3xl md:text-4xl font-bold text-black mb-6">
+            Ready to Get Started?
+        </h2>
+        <p class="font-raleway text-lg text-[#212529] mb-8 max-w-2xl mx-auto">
+            Let's discuss how we can help transform your business with our technology solutions.
+        </p>
+        <a href="/connect/"
+            class="inline-flex items-center gap-2 bg-[#E12726] text-white px-8 py-4 text-lg font-raleway font-medium rounded hover:bg-[#c11f1f] transition-colors">
+            Get In Touch
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </a>
+    </div>
+</section>
+{% endblock %}

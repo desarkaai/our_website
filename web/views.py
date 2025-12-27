@@ -90,6 +90,24 @@ def placeholder_view(request):
     return render(request, 'placeholder.html', context)
 
 
+def about_view(request):
+    """About Us page."""
+    context = {
+        'page_title': 'About Us | Desarka',
+        'current_page': 'about_us',
+    }
+    return render(request, 'about.html', context)
+
+
+def connect_view(request):
+    """Connect page with contact information."""
+    context = {
+        'page_title': 'Connect | Desarka',
+        'current_page': 'connect',
+    }
+    return render(request, 'connect.html', context)
+
+
 def not_found_view(request, exception=None):
     """Custom 404 error page."""
     context = {
