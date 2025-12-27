@@ -1,5 +1,5 @@
 """
-Views for the CrestMediaTekAI web application.
+Views for the Desarka web application.
 """
 from django.shortcuts import render
 
@@ -7,7 +7,7 @@ from django.shortcuts import render
 def index_view(request):
     """Homepage view with all main sections."""
     context = {
-        'page_title': 'CrestMediaTekAI | Leading Technology & Software Solutions Agency',
+        'page_title': 'Desarka | Leading Technology & Software Solutions Agency',
         'current_page': 'home',
         'solutions': [
             {'number': '01', 'title': 'Website Development'},
@@ -20,32 +20,38 @@ def index_view(request):
             {
                 'title': 'IT solution migration with database and dashboard creation',
                 'image': 'images/akbar_work.png',
+                'logo': 'images/akbar.png',
                 'client': 'Akbar'
             },
             {
                 'title': 'Custom CRM system tailored for business operations',
                 'image': 'images/secure_work.png',
+                'logo': 'images/securetechav.png',
                 'client': 'SecureTech AV'
             },
             {
                 'title': 'Full-stack e-commerce platform for luxury jewelry',
                 'image': 'images/amaarah_work.png',
+                'logo': 'images/amaarah.png',
                 'client': 'Amaarah'
-            },
-            {
-                'title': 'Modern cable and networking solutions website',
-                'image': 'images/netmas_work.png',
-                'client': 'Netmas'
-            },
-            {
-                'title': 'Digital displays and projectors company website',
-                'image': 'images/ampluxe_work.png',
-                'client': 'Ampluxe'
             },
             {
                 'title': 'Inventory management and replacement tracking system',
                 'image': 'images/techmiles_work.png',
+                'logo': 'images/techmiles.png',
                 'client': 'TechMiles'
+            },
+            {
+                'title': 'Modern brand identity and digital presence',
+                'image': 'images/ampluxe_work.png',
+                'logo': 'images/ampluxlogo.png',
+                'client': 'Ampluxe'
+            },
+            {
+                'title': 'Enterprise networking and IT solutions',
+                'image': 'images/netmas_work.png',
+                'logo': 'images/netmas logo.png',
+                'client': 'Netmas'
             },
         ],
         'companies': [
@@ -77,7 +83,7 @@ def placeholder_view(request):
         page_name = 'Page'
     
     context = {
-        'page_title': f'{page_name} | CrestMediaTekAI',
+        'page_title': f'{page_name} | Desarka',
         'page_name': page_name,
         'current_page': request.path.strip('/').replace('/', '_'),
     }
@@ -87,6 +93,6 @@ def placeholder_view(request):
 def not_found_view(request, exception=None):
     """Custom 404 error page."""
     context = {
-        'page_title': 'Page Not Found | CrestMediaTekAI',
+        'page_title': 'Page Not Found | Desarka',
     }
     return render(request, '404.html', context, status=404)

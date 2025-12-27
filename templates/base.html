@@ -5,10 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page_title|default:"CrestMediaTekAI | Leading Technology & Software Solutions Agency"
-        }}{% endblock %}</title>
+    <title>{% block title %}{{ page_title|default:"Desarka" }}{% endblock %}</title>
     <meta name="description"
-        content="CrestMediaTekAI delivers cutting-edge software solutions including website development, app development, AI & automation, social media management, and custom software services. Transform your business with innovative technology.">
+        content="Desarka delivers cutting-edge software solutions including website development, app development, AI & automation, social media management, and custom software services. Transform your business with innovative technology.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +57,9 @@
     {% include 'components/footer.html' %}
 
     <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{% static 'js/three-bg.js' %}"></script>
+    <script src="{% static 'js/particles.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     {% block extra_js %}{% endblock %}
 </body>

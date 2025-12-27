@@ -3,15 +3,15 @@
 {% block content %}
 <!-- Hero Section -->
 <section
-    class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-8 md:py-12 flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-[167px]">
+    class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-3 md:py-4 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3 lg:gap-[80px]">
     <div class="flex-1">
         <h1
-            class="font-inter text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[76px] uppercase text-black">
-            Technology & Software Solutions
+            class="font-inter text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight md:leading-[50px] uppercase text-black reveal-up">
+            <span class="whitespace-nowrap gradient-text">Technology & Software</span><br>Solutions
         </h1>
     </div>
-    <div class="lg:max-w-[693px]">
-        <p class="font-raleway text-base md:text-lg font-normal leading-[27px] text-[#212529]">
+    <div class="lg:max-w-[450px]">
+        <p class="font-raleway text-xs md:text-sm font-normal leading-[20px] text-[#212529]">
             Empowering businesses with cutting-edge AI, automation, and custom software solutions to drive digital
             transformation.
         </p>
@@ -20,35 +20,30 @@
 
 <!-- Hero Split Section -->
 <section class="w-full border-t-2 border-black">
-    <div class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-2 flex flex-col lg:flex-row">
-        <!-- Left - Video/Image -->
-        <div class="flex-1 border-b lg:border-b-0 lg:border-r border-black p-4 md:p-8 flex items-center justify-center">
-            <div
-                class="w-full h-[300px] md:h-[450px] lg:h-[596px] flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 rounded">
-                <p class="font-roboto text-sm md:text-base font-normal leading-6 text-white">
-                    Your browser does not support the video tag.
-                </p>
+    <div class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-0 flex flex-col lg:flex-row">
+        <!-- Left - Three.js 3D Background -->
+        <div class="flex-1 border-b lg:border-b-0 lg:border-r border-black p-2 md:p-3 flex items-center justify-center">
+            <div id="threejs-container"
+                class="w-full h-[200px] md:h-[280px] lg:h-[340px] rounded overflow-hidden bg-black">
             </div>
         </div>
 
         <!-- Right - Red Card -->
         <div
-            class="w-full lg:w-[717px] border-t lg:border-t-0 lg:border-l border-black p-4 md:p-8 flex items-center justify-center">
+            class="w-full lg:w-[500px] border-t lg:border-t-0 lg:border-l border-black p-2 md:p-3 flex items-center justify-center">
             <div
-                class="bg-[#E12726] w-full min-h-[400px] md:min-h-[500px] lg:h-[596px] p-6 md:p-8 flex flex-col justify-between">
+                class="bg-[#E12726] w-full min-h-[200px] md:min-h-[280px] lg:h-[340px] p-4 md:p-5 flex flex-col justify-between">
                 <div class="flex justify-end">
-                    <svg width="50" height="78" viewBox="0 0 50 78" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="w-[40px] h-[62px] md:w-[50px] md:h-[78px]">
+                    <svg width="30" height="48" viewBox="0 0 50 78" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="w-[25px] h-[40px] md:w-[30px] md:h-[48px]">
                         <path d="M25 0L50 39L25 78L0 39L25 0Z" fill="white" fill-opacity="0.2" />
                     </svg>
                 </div>
                 <div>
-                    <p
-                        class="font-raleway text-base md:text-lg font-bold leading-[27px] tracking-[1px] text-white mb-2">
+                    <p class="font-raleway text-xs md:text-sm font-bold leading-[20px] tracking-[1px] text-white mb-1">
                         Specialists in
                     </p>
-                    <h2
-                        class="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:leading-[57px] text-white">
+                    <h2 class="font-raleway text-lg md:text-xl lg:text-2xl font-bold leading-snug text-white">
                         Building innovative digital solutions that transform businesses
                     </h2>
                 </div>
@@ -58,33 +53,43 @@
 </section>
 
 <!-- Client Logos Scrolling Section -->
-<section class="w-full py-8 md:py-12 overflow-hidden bg-white">
+<section class="snap-section w-full py-4 md:py-6 overflow-hidden bg-white">
     <div class="relative">
         <div class="flex gap-12 md:gap-24 lg:gap-48 animate-scroll">
             {% load static %}
             <!-- Repeat twice for seamless infinite scroll -->
             {% for repeat in "01" %}
             <div
-                class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] flex items-center justify-center flex-shrink-0 p-8 bg-white rounded-lg shadow-sm">
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
                 <img src="{% static 'images/akbar.png' %}" alt="Akbar" class="max-w-full max-h-full object-contain">
             </div>
             <div
-                class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] flex items-center justify-center flex-shrink-0 p-8 bg-white rounded-lg shadow-sm">
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
                 <img src="{% static 'images/amaarah.png' %}" alt="Amaarah" class="max-w-full max-h-full object-contain">
             </div>
             <div
-                class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] flex items-center justify-center flex-shrink-0 p-8 bg-white rounded-lg shadow-sm">
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
                 <img src="{% static 'images/securetechav.png' %}" alt="SecureTechAV"
                     class="max-w-full max-h-full object-contain">
             </div>
             <div
-                class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] flex items-center justify-center flex-shrink-0 p-8 bg-white rounded-lg shadow-sm">
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
                 <img src="{% static 'images/techmiles.png' %}" alt="TechMiles"
                     class="max-w-full max-h-full object-contain">
             </div>
             <div
-                class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] flex items-center justify-center flex-shrink-0 p-8 bg-white rounded-lg shadow-sm">
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
                 <img src="{% static 'images/united.png' %}" alt="United" class="max-w-full max-h-full object-contain">
+            </div>
+            <div
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
+                <img src="{% static 'images/ampluxlogo.png' %}" alt="Ampluxe"
+                    class="max-w-full max-h-full object-contain">
+            </div>
+            <div
+                class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] flex items-center justify-center flex-shrink-0 p-4 bg-white rounded-lg shadow-sm">
+                <img src="{% static 'images/netmas logo.png' %}" alt="Netmas"
+                    class="max-w-full max-h-full object-contain">
             </div>
             {% endfor %}
         </div>
@@ -92,10 +97,10 @@
 </section>
 
 <!-- Our Solutions Section -->
-<section class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-8 md:py-12">
+<section class="snap-section max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-4 md:py-6">
     <div class="flex justify-between items-center mb-8 md:mb-12">
         <h2
-            class="font-inter text-3xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[76px] uppercase text-black">
+            class="font-inter text-3xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[76px] uppercase text-black reveal-up">
             Our Solutions
         </h2>
         <div class="w-[50px] h-[50px] flex items-center justify-center">
@@ -125,10 +130,10 @@
 </section>
 
 <!-- Our Work Section -->
-<section class="max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-8 md:py-12">
+<section class="snap-section max-w-[1720px] mx-auto px-4 md:px-12 lg:px-[100px] py-4 md:py-6">
     <div class="flex justify-between items-center pb-8 md:pb-12 border-b border-black mb-8 md:mb-12">
         <h2
-            class="font-inter text-3xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[76px] uppercase text-black">
+            class="font-inter text-3xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[76px] uppercase text-black reveal-up">
             Our Work
         </h2>
         <div class="w-[50px] h-[50px] flex items-center justify-center">
@@ -140,19 +145,38 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
         {% for project in projects %}
-        <div class="rounded-[10px] overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow">
-            <div class="relative h-[250px] md:h-[300px] bg-gray-100 overflow-hidden">
-                {% if project.image %}
-                <img src="{% static project.image %}" alt="{{ project.client }}"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                {% endif %}
-            </div>
-            <div class="bg-white px-4 py-3 border-t-2 border-[#E12726]">
-                <p class="font-inter text-sm font-medium leading-snug text-gray-700">
-                    {{ project.title }}
-                </p>
+        <div class="flip-card rounded-[10px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flip-card-inner">
+                <!-- Front - Logo -->
+                <div class="flip-card-front">
+                    <div class="relative h-[150px] md:h-[180px] bg-white flex items-center justify-center p-4">
+                        {% if project.logo %}
+                        <img src="{% static project.logo %}" alt="{{ project.client }}"
+                            class="max-w-full max-h-full object-contain">
+                        {% endif %}
+                    </div>
+                    <div class="bg-white px-4 py-3 border-t-2 border-[#E12726]">
+                        <p class="font-inter text-sm font-medium leading-snug text-gray-700">
+                            {{ project.client }}
+                        </p>
+                    </div>
+                </div>
+                <!-- Back - Work Image -->
+                <div class="flip-card-back">
+                    <div class="relative h-[150px] md:h-[180px] bg-gray-100 overflow-hidden">
+                        {% if project.image %}
+                        <img src="{% static project.image %}" alt="{{ project.client }}"
+                            class="w-full h-full object-cover">
+                        {% endif %}
+                    </div>
+                    <div class="bg-white px-4 py-3 border-t-2 border-[#E12726]">
+                        <p class="font-inter text-sm font-medium leading-snug text-gray-700">
+                            {{ project.title }}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}

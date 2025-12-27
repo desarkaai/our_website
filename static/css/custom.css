@@ -1,4 +1,4 @@
-/* CrestMediaTekAI Custom Styles */
+/* Desarka Custom Styles */
 
 /* CSS Custom Properties (Variables) matching the React theme */
 :root {
@@ -23,7 +23,7 @@
   --ring: 222.2 84% 4.9%;
   --radius: 0.5rem;
 
-  /* CrestMediaTekAI Brand Colors */
+  /* Desarka Brand Colors */
   --mediax-red: #E12726;
   --mediax-black: #000000;
   --mediax-gray: #222222;
@@ -41,6 +41,87 @@ body {
   background: white;
   color: #000;
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+body.dark-theme header {
+  background: #111111 !important;
+}
+
+body.dark-theme .bg-white {
+  background: #1a1a1a !important;
+}
+
+body.dark-theme .text-black {
+  color: #ffffff !important;
+}
+
+body.dark-theme .border-black {
+  border-color: #444444 !important;
+}
+
+body.dark-theme .text-gray-700 {
+  color: #cccccc !important;
+}
+
+body.dark-theme .shadow-lg,
+body.dark-theme .shadow-sm {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-theme .hover\:bg-gray-50:hover {
+  background: #222222 !important;
+}
+
+/* Light Bulb Animation */
+.bulb-container {
+  cursor: pointer;
+}
+
+#pull-cord {
+  transition: transform 0.3s ease;
+}
+
+#pull-cord.pulled {
+  transform: translateY(10px);
+}
+
+/* Bulb off state */
+body.dark-theme #bulb-glow {
+  opacity: 0 !important;
+}
+
+body.dark-theme #bulb-glass {
+  fill: #333333 !important;
+  stroke: #555555 !important;
+}
+
+/* Bulb glow animation when on */
+@keyframes bulb-pulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 220, 100, 0.8));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 220, 100, 1));
+  }
+}
+
+#bulb-svg {
+  animation: bulb-pulse 2s ease-in-out infinite;
+}
+
+body.dark-theme #bulb-svg {
+  animation: none;
+  filter: none;
 }
 
 /* Prevent text overflow */
@@ -62,9 +143,16 @@ th {
   word-break: break-word;
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling with Snap */
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+/* Scroll Snap Sections */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 /* Client Logos Scrolling Animation */
@@ -201,4 +289,303 @@ img {
   .container-custom {
     padding: 0 16px;
   }
+}
+
+/* Flip Card Styles for Our Work Section */
+.flip-card {
+  perspective: 1000px;
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .flip-card {
+    height: 230px;
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Custom Circle Cursor with Dot */
+.custom-cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.hover {
+  width: 70px;
+  height: 70px;
+  border-color: #E12726;
+}
+
+.custom-cursor.hover::after {
+  background-color: #E12726;
+}
+
+/* Hide default cursor when custom cursor is active */
+body.custom-cursor-active {
+  cursor: none;
+}
+
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active .flip-card,
+body.custom-cursor-active [role="button"] {
+  cursor: none;
+}
+
+/* Cursor Smoke Trail Effect */
+.smoke-particle {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(150, 150, 150, 0.6) 0%, rgba(100, 100, 100, 0.3) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: smoke-fade 0.8s ease-out forwards;
+}
+
+@keyframes smoke-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0px);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, calc(-50% - 10px)) scale(1.5);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 20px)) scale(2.5);
+    filter: blur(4px);
+  }
+}
+
+/* ============ WOW EFFECTS ============ */
+
+/* Magnetic Button Hover Effect */
+.magnetic-btn {
+  transition: transform 0.3s ease;
+}
+
+.magnetic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(225, 39, 38, 0.3);
+}
+
+/* Text Glitch Effect on Hover */
+.glitch-text:hover {
+  animation: glitch 0.3s ease forwards;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* 3D Card Tilt Effect */
+.tilt-card {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(20px);
+}
+
+/* Glow Effect on Interactive Elements */
+.glow-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(225, 39, 38, 0.5), 0 0 40px rgba(225, 39, 38, 0.3);
+}
+
+/* Reveal Animation from Bottom */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating Animation */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse Glow for Important Elements */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(225, 39, 38, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(225, 39, 38, 0.8), 0 0 50px rgba(225, 39, 38, 0.4);
+  }
+}
+
+/* Gradient Text Animation */
+.gradient-text {
+  background: linear-gradient(90deg, #E12726, #ff6b6b, #E12726);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Underline Animation */
+.underline-animate {
+  position: relative;
+}
+
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #E12726;
+  transition: width 0.3s ease;
+}
+
+.underline-animate:hover::after {
+  width: 100%;
+}
+
+/* Scale Up on Scroll */
+.scale-on-view {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.scale-on-view.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Rotate In Animation */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.9);
+  transition: all 0.5s ease;
+}
+
+.rotate-in.visible {
+  opacity: 1;
+  transform: rotate(0) scale(1);
 }

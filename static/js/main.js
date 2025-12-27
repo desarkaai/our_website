@@ -1,6 +1,62 @@
-// CrestMediaTekAI Main JavaScript
+// Desarka Main JavaScript
 
 document.addEventListener('DOMContentLoaded', function () {
+    // ========== THEME TOGGLE (Light Bulb) ==========
+    const themeToggle = document.getElementById('theme-toggle');
+    const pullCord = document.getElementById('pull-cord');
+    const body = document.body;
+
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('desarka-theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+    }
+
+    if (themeToggle) {
+        let isPulling = false;
+
+        themeToggle.addEventListener('click', function () {
+            if (isPulling) return;
+            isPulling = true;
+
+            // Animate the pull cord
+            if (pullCord) {
+                pullCord.classList.add('pulled');
+
+                // Play a subtle "click" animation
+                setTimeout(() => {
+                    pullCord.classList.remove('pulled');
+                }, 200);
+            }
+
+            // Toggle theme after pull animation
+            setTimeout(() => {
+                body.classList.toggle('dark-theme');
+
+                // Save preference
+                if (body.classList.contains('dark-theme')) {
+                    localStorage.setItem('desarka-theme', 'dark');
+                } else {
+                    localStorage.setItem('desarka-theme', 'light');
+                }
+
+                isPulling = false;
+            }, 150);
+        });
+
+        // Add hover effect for pull cord
+        themeToggle.addEventListener('mouseenter', function () {
+            if (pullCord) {
+                pullCord.style.transform = 'translateY(3px)';
+            }
+        });
+
+        themeToggle.addEventListener('mouseleave', function () {
+            if (pullCord && !pullCord.classList.contains('pulled')) {
+                pullCord.style.transform = 'translateY(0)';
+            }
+        });
+    }
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -71,5 +127,41 @@ document.addEventListener('DOMContentLoaded', function () {
     // Observe elements with fade-in class if added
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
+    });
+
+    // Observe WOW animation elements
+    document.querySelectorAll('.reveal-up, .scale-on-view, .rotate-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Custom Cursor Implementation
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+    document.body.classList.add('custom-cursor-active');
+
+    // Track mouse movement - just move cursor, no smoke
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Add hover effect on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .flip-card, [role="button"], input, textarea');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
     });
 });
