@@ -55,6 +55,90 @@
             </div>
         </div>
 
+        <!-- Contact Form Section -->
+        <div
+            class="max-w-4xl mx-auto bg-white border-2 border-black rounded-[20px] overflow-hidden shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] mb-16">
+            <div class="bg-black py-4 px-6">
+                <h2 class="font-inter text-xl md:text-2xl font-bold uppercase text-white text-left">
+                    Send us a Message
+                </h2>
+            </div>
+
+            <form action="https://formspree.io/f/xjgeaanp" method="POST" class="p-6 md:p-10 space-y-6 text-left">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Name -->
+                    <div class="space-y-2">
+                        <label for="name" class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
+                            Full Name
+                        </label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway"
+                            placeholder="John Doe">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="space-y-2">
+                        <label for="email" class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
+                            Email Address
+                        </label>
+                        <input type="email" name="email" id="email" required
+                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway"
+                            placeholder="john@example.com">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Phone -->
+                    <div class="space-y-2">
+                        <label for="phone" class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
+                            Phone Number
+                        </label>
+                        <input type="tel" name="phone" id="phone"
+                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway"
+                            placeholder="+91 00000 00000">
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="space-y-2">
+                        <label for="subject" class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
+                            Subject
+                        </label>
+                        <select name="subject" id="subject"
+                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway bg-white">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Request a Quote">Request a Quote</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="space-y-2">
+                    <label for="message" class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
+                        Your Message
+                    </label>
+                    <textarea name="message" id="message" rows="5" required
+                        class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway resize-none"
+                        placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button type="submit"
+                        class="group relative inline-flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full font-roboto font-bold text-lg hover:bg-[#E12726] transition-all duration-300 transform hover:-translate-y-1">
+                        <span>Send Message</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="group-hover:translate-x-2 transition-transform">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <!-- Back to Home -->
         <a href="/"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-black hover:bg-black hover:text-white transition-colors">
