@@ -4,9 +4,8 @@
 set -e
 
 echo "Building project..."
-# Use python3 instead of python3.12 to be safer with paths
-python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
+# Use --break-system-packages to bypass PEP 668 restriction in the build container
+python3 -m pip install -r requirements.txt --break-system-packages
 
 echo "Collecting static files..."
 python3 manage.py collectstatic --noinput --clear
