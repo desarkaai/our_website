@@ -147,7 +147,10 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
         {% for project in projects %}
-        <div class="flip-card rounded-[10px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+        {% if project.slug %}<a href="{% url 'web:case_study' project.slug %}"
+            aria-label="Read the {{ project.client }} case study"
+            class="block rounded-[10px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E12726]">{% endif %}
+        <div class="flip-card rounded-[10px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow{% if project.slug %} cursor-pointer{% endif %}">
             <div class="flip-card-inner">
                 <!-- Front - Logo -->
                 <div class="flip-card-front">
@@ -170,6 +173,16 @@
                         <img src="{% static project.image %}" alt="{{ project.client }}"
                             class="w-full h-full object-cover">
                         {% endif %}
+                        {% if project.slug %}
+                        <span
+                            class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 bg-[#E12726] text-white font-inter text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                            Click to view
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        {% endif %}
                     </div>
                     <div class="bg-white px-4 py-3 border-t-2 border-[#E12726]">
                         <p class="font-inter text-sm font-medium leading-snug text-gray-700">
@@ -179,6 +192,7 @@
                 </div>
             </div>
         </div>
+        {% if project.slug %}</a>{% endif %}
         {% endfor %}
     </div>
 

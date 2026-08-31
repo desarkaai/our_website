@@ -25,3 +25,18 @@ dist-ssr
 
 .config/
 !.env
+
+# Python / Django
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+db.sqlite3-journal
+staticfiles/
+
+# Local data — never commit
+local.db
+*.db-journal
+
+# Client source kept alongside for reference — separate repo, do not commit
+/ak/

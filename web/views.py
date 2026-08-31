@@ -2,6 +2,9 @@
 Views for the Desarka web application.
 """
 from django.shortcuts import render
+from django.http import Http404
+
+from .case_studies import CASE_STUDIES, CASE_STUDIES_BY_SLUG
 
 
 def index_view(request):
@@ -18,40 +21,53 @@ def index_view(request):
         ],
         'projects': [
             {
-                'title': 'IT solution migration with database and dashboard creation',
+                'title': 'Full ERP — inventory, karigar workflow and export documentation',
                 'image': 'images/akbar_work.png',
                 'logo': 'images/akbar.png',
-                'client': 'Akbar'
+                'client': 'Akbar',
+                'slug': 'akbar-international'
             },
             {
                 'title': 'Custom CRM system tailored for business operations',
                 'image': 'images/secure_work.png',
                 'logo': 'images/securetechav.png',
-                'client': 'SecureTech AV'
+                'client': 'SecureTech AV',
+                'slug': 'securetech-av'
             },
             {
                 'title': 'Full-stack e-commerce platform for luxury jewelry',
                 'image': 'images/amaarah_work.png',
                 'logo': 'images/amaarah.png',
-                'client': 'Amaarah'
+                'client': 'Amaarah',
+                'slug': 'amaarah'
             },
             {
                 'title': 'Inventory management and replacement tracking system',
                 'image': 'images/techmiles_work.png',
                 'logo': 'images/techmiles.png',
-                'client': 'TechMiles'
+                'client': 'TechMiles',
+                'slug': 'techmills'
             },
             {
                 'title': 'Modern brand identity and digital presence',
                 'image': 'images/ampluxe_work.png',
                 'logo': 'images/ampluxlogo.png',
-                'client': 'Ampluxe'
+                'client': 'Ampluxe',
+                'slug': 'ampluxe'
             },
             {
                 'title': 'Enterprise networking and IT solutions',
                 'image': 'images/netmas_work.png',
                 'logo': 'images/netmas logo.png',
-                'client': 'Netmas'
+                'client': 'Netmas',
+                'slug': 'netmas'
+            },
+            {
+                'title': 'Live-class booking platform and wellness brand experience',
+                'image': 'images/yogher_work.png',
+                'logo': 'images/yogher.png',
+                'client': 'YogHer',
+                'slug': 'yogher'
             },
         ],
         'companies': [
@@ -73,6 +89,32 @@ def index_view(request):
         ],
     }
     return render(request, 'index.html', context)
+
+
+def projects_view(request):
+    """Index of client case studies."""
+    context = {
+        'page_title': 'Our Work | Desarka',
+        'current_page': 'projects',
+        'case_studies': CASE_STUDIES,
+    }
+    return render(request, 'projects.html', context)
+
+
+def case_study_view(request, slug):
+    """A single client case study."""
+    study = CASE_STUDIES_BY_SLUG.get(slug)
+    if study is None:
+        raise Http404('No case study matches that address.')
+
+    index = CASE_STUDIES.index(study)
+    context = {
+        'page_title': f"{study['client']} | Desarka Case Study",
+        'current_page': 'projects',
+        'study': study,
+        'next_study': CASE_STUDIES[(index + 1) % len(CASE_STUDIES)],
+    }
+    return render(request, 'case_study.html', context)
 
 
 def placeholder_view(request):
