@@ -40,3 +40,6 @@ local.db
 
 # Client source kept alongside for reference — separate repo, do not commit
 /ak/
+
+# SQLite database (the public site makes no database queries)
+db.sqlite3
