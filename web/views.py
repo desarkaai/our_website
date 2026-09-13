@@ -13,11 +13,13 @@ def index_view(request):
         'page_title': 'Desarka | Leading Technology & Software Solutions Agency',
         'current_page': 'home',
         'solutions': [
-            {'number': '01', 'title': 'Website Development'},
-            {'number': '02', 'title': 'App Development'},
+            {'number': '01', 'title': 'ERP Development'},
+            {'number': '02', 'title': 'CRM Development'},
             {'number': '03', 'title': 'AI & Automation Solutions'},
-            {'number': '04', 'title': 'Social Media Management'},
-            {'number': '05', 'title': 'Custom Software Services'},
+            {'number': '04', 'title': 'Custom Software Development'},
+            {'number': '05', 'title': 'Website & E-commerce Development'},
+            {'number': '06', 'title': 'Mobile App Development'},
+            {'number': '07', 'title': 'Embedded Systems & IoT'},
         ],
         'projects': [
             {
