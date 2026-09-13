@@ -69,6 +69,13 @@ def index_view(request):
                 'client': 'YogHer',
                 'slug': 'yogher'
             },
+            {
+                'title': 'AI automation that generates book content and images from a topic',
+                'image': 'images/oswaal_work.png',
+                'logo': 'images/oswaal.png',
+                'client': 'Oswaal Books',
+                'slug': 'oswaal-books'
+            },
         ],
         'companies': [
             {

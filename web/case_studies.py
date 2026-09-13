@@ -419,6 +419,70 @@ CASE_STUDIES = [
             'cite': 'YogHer · site copy',
         },
     },
+    {
+        'slug': 'oswaal-books',
+        'client': 'Oswaal Books',
+        'logo': 'images/oswaal.png',
+        'image': 'images/oswaal_work.png',
+        'sector': 'Educational publishing',
+        'engagement': 'AI automation that generates book content and images from a topic',
+        'url': '',
+        'standfirst': (
+            'A publisher whose catalogue has to keep pace with every school board and entrance '
+            'exam in the country — and an AI system that turns a topic into a book, text and '
+            'images together.'
+        ),
+        'facts': [
+            ('Engagement', 'AI book-generation automation'),
+            ('Founded', '1984 · Agra, Uttar Pradesh'),
+            ('Covers', 'CBSE, ICSE, ISC, IGCSE · JEE, NEET, CUET, CLAT, CAT, UPSC, SSC, Olympiads'),
+            ('Published reach', '2.63 crore+ students · 48,126 schools & coachings'),
+        ],
+        'sections': [
+            {
+                'heading': 'The client',
+                'paras': [
+                    'Oswaal Books was founded in Agra in 1984 by Naresh Jain and is now led by CEO '
+                    'Prashant Jain. It publishes question banks and study material for school '
+                    'boards — CBSE, ICSE, ISC and IGCSE — and for entrance and competitive exams '
+                    'from JEE and NEET to CUET, CLAT, CAT, UPSC, SSC and the Olympiads.',
+                    'Its own site cites more than 2.63 crore students and aspirants, 4.79 lakh '
+                    'teachers and educators, and adoption across 48,126 schools and coaching '
+                    'institutes. Its CBSE and ICSE question banks were named Product of the Year '
+                    '2022 in a Nielsen nationwide survey.',
+                ],
+            },
+            {
+                'heading': 'The problem',
+                'paras': [
+                    'Exam publishing runs on a calendar the publisher does not control. Every board '
+                    'revision, every new exam pattern and every academic year means content across '
+                    'a very large catalogue has to be written, illustrated and assembled again — '
+                    'against a release date that does not move.',
+                    'The bottleneck is not printing. It is producing the content in the first place.',
+                ],
+            },
+            {
+                'heading': 'What we built',
+                'paras': [
+                    'An AI automation that generates a book from a topic. Given the subject a book '
+                    'should cover, it produces the written content and the images that go with it, '
+                    'so a new title starts from complete book content rather than a blank page.',
+                ],
+            },
+            {
+                'heading': 'Why it fits a publisher at this scale',
+                'paras': [
+                    'A publisher covering this many boards and exams is, in practice, running a '
+                    'content production line. At that scale the expensive step in a new title is '
+                    'generating its content — and text and imagery are usually two separate '
+                    'efforts. Producing both together, from a single topic, is where the time '
+                    'comes back.',
+                ],
+            },
+        ],
+        'quote': None,
+    },
 ]
 
 CASE_STUDIES_BY_SLUG = {study['slug']: study for study in CASE_STUDIES}
