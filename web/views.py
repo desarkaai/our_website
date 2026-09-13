@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.http import Http404
 
 from .case_studies import CASE_STUDIES, CASE_STUDIES_BY_SLUG
+from . import solutions as solutions_content
+from .solutions import SOLUTIONS, FEATURES
 
 
 def index_view(request):
@@ -12,21 +14,16 @@ def index_view(request):
     context = {
         'page_title': 'Desarka | Leading Technology & Software Solutions Agency',
         'current_page': 'home',
-        'solutions': [
-            {'number': '01', 'title': 'ERP Development'},
-            {'number': '02', 'title': 'CRM Development'},
-            {'number': '03', 'title': 'AI & Automation Solutions'},
-            {'number': '04', 'title': 'Custom Software Development'},
-            {'number': '05', 'title': 'Website & E-commerce Development'},
-            {'number': '06', 'title': 'Mobile App Development'},
-            {'number': '07', 'title': 'Embedded Systems & IoT'},
-        ],
+        'solutions': SOLUTIONS,
+        'features': FEATURES,
         'projects': [
             {
                 'title': 'Full ERP — inventory, karigar workflow and export documentation',
-                'image': 'images/akbar_work.png',
+                'image': 'images/work/akbar.webp',
                 'logo': 'images/akbar.png',
                 'client': 'Akbar',
+                'cover': 'images/work/akbar.webp',
+                'tags': 'ERP · Inventory · Export documentation',
                 'slug': 'akbar-international'
             },
             {
@@ -34,6 +31,8 @@ def index_view(request):
                 'image': 'images/secure_work.png',
                 'logo': 'images/securetechav.png',
                 'client': 'SecureTech AV',
+                'cover': 'images/work/securetech-av.webp',
+                'tags': 'CRM · Custom software',
                 'slug': 'securetech-av'
             },
             {
@@ -41,6 +40,8 @@ def index_view(request):
                 'image': 'images/amaarah_work.png',
                 'logo': 'images/amaarah.png',
                 'client': 'Amaarah',
+                'cover': 'images/work/amaarah.webp',
+                'tags': 'E-commerce · Website',
                 'slug': 'amaarah'
             },
             {
@@ -48,6 +49,8 @@ def index_view(request):
                 'image': 'images/techmiles_work.png',
                 'logo': 'images/techmiles.png',
                 'client': 'TechMiles',
+                'cover': 'images/work/techmills.webp',
+                'tags': 'Inventory · Replacement tracking',
                 'slug': 'techmills'
             },
             {
@@ -55,6 +58,8 @@ def index_view(request):
                 'image': 'images/ampluxe_work.png',
                 'logo': 'images/ampluxlogo.png',
                 'client': 'Ampluxe',
+                'cover': 'images/work/ampluxe.webp',
+                'tags': 'Brand identity · Website',
                 'slug': 'ampluxe'
             },
             {
@@ -62,6 +67,8 @@ def index_view(request):
                 'image': 'images/netmas_work.png',
                 'logo': 'images/netmas logo.png',
                 'client': 'Netmas',
+                'cover': 'images/work/netmas.webp',
+                'tags': 'Website · Product catalogue',
                 'slug': 'netmas'
             },
             {
@@ -69,6 +76,8 @@ def index_view(request):
                 'image': 'images/yogher_work.png',
                 'logo': 'images/yogher.png',
                 'client': 'YogHer',
+                'cover': 'images/work/yogher.webp',
+                'tags': 'Booking platform · Website',
                 'slug': 'yogher'
             },
             {
@@ -76,6 +85,8 @@ def index_view(request):
                 'image': 'images/oswaal_work.png',
                 'logo': 'images/oswaal.png',
                 'client': 'Oswaal Books',
+                'cover': 'images/work/oswaal.webp',
+                'tags': 'AI automation · Content generation',
                 'slug': 'oswaal-books'
             },
         ],
@@ -165,3 +176,42 @@ def not_found_view(request, exception=None):
         'page_title': 'Page Not Found | Desarka',
     }
     return render(request, '404.html', context, status=404)
+
+
+def solutions_view(request):
+    """Index of everything Desarka builds."""
+    context = {
+        'page_title': 'Our Solutions | Desarka',
+        'current_page': 'solutions',
+        'solutions': SOLUTIONS,
+    }
+    return render(request, 'solutions.html', context)
+
+
+def solution_detail_view(request, slug):
+    """A single solution, with outcomes, capabilities, process and FAQs."""
+    solutions_by_slug = getattr(solutions_content, 'SOLUTIONS_BY_SLUG', None)
+    if not solutions_by_slug:
+        solutions_by_slug = {item['slug']: item for item in SOLUTIONS}
+
+    solution = solutions_by_slug.get(slug)
+    if solution is None:
+        raise Http404('No solution matches that address.')
+
+    slugs = [item['slug'] for item in SOLUTIONS]
+    index = slugs.index(slug)
+    related_case_studies = [
+        CASE_STUDIES_BY_SLUG[study_slug]
+        for study_slug in solution.get('related_case_studies') or []
+        if study_slug in CASE_STUDIES_BY_SLUG
+    ]
+
+    context = {
+        'page_title': f"{solution['title']} | Desarka",
+        'current_page': 'solutions',
+        'solution': solution,
+        'prev_solution': SOLUTIONS[(index - 1) % len(SOLUTIONS)],
+        'next_solution': SOLUTIONS[(index + 1) % len(SOLUTIONS)],
+        'related_case_studies': related_case_studies,
+    }
+    return render(request, 'solution_detail.html', context)

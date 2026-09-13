@@ -10,6 +10,7 @@ available, add them to the 'facts' list of the relevant study.
 CASE_STUDIES = [
     {
         'slug': 'akbar-international',
+        'cover': 'images/work/akbar.webp',
         'client': 'Akbar International',
         'logo': 'images/akbar.png',
         'image': 'images/akbar_erp_dashboard.png',
@@ -92,6 +93,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'securetech-av',
+        'cover': 'images/work/securetech-av.webp',
         'client': 'SecureTech AV',
         'logo': 'images/securetechav.png',
         'image': 'images/secure_work.png',
@@ -151,6 +153,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'amaarah',
+        'cover': 'images/work/amaarah.webp',
         'client': 'Amaarah',
         'logo': 'images/amaarah.png',
         'image': 'images/amaarah_work.png',
@@ -205,6 +208,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'techmills',
+        'cover': 'images/work/techmills.webp',
         'client': 'TechMiles',
         'logo': 'images/techmiles.png',
         'image': 'images/techmiles_work.png',
@@ -253,6 +257,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'netmas',
+        'cover': 'images/work/netmas.webp',
         'client': 'Netmas',
         'logo': 'images/netmas logo.png',
         'image': 'images/netmas_work.png',
@@ -309,6 +314,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'ampluxe',
+        'cover': 'images/work/ampluxe.webp',
         'client': 'Ampluxe',
         'logo': 'images/ampluxlogo.png',
         'image': 'images/ampluxe_work.png',
@@ -363,6 +369,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'yogher',
+        'cover': 'images/work/yogher.webp',
         'client': 'YogHer',
         'logo': 'images/yogher.png',
         'image': 'images/yogher_work.png',
@@ -421,6 +428,7 @@ CASE_STUDIES = [
     },
     {
         'slug': 'oswaal-books',
+        'cover': 'images/work/oswaal.webp',
         'client': 'Oswaal Books',
         'logo': 'images/oswaal.png',
         'image': 'images/oswaal_work.png',

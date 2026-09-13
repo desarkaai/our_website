@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="studio-intro studio-container">
+    <div><p class="eyebrow">WHAT WE BUILD</p><h1>Our solutions<span>.</span></h1></div>
+    <div class="intro-aside"><p>From the systems that run your operation to the experiences your customers see. Choose a solution to see what it involves and how we work.</p><a class="text-link" href="{% url 'web:connect' %}">Talk about your project <span aria-hidden="true">&#8599;</span></a></div>
+</section>
+
+<nav class="service-nav studio-container" aria-label="Solutions">
+    {% for solution in solutions %}<a href="{% url 'web:solution_detail' solution.slug %}">{{ solution.title }}</a>{% endfor %}
+</nav>
+
+<section class="solutions-index" aria-label="All solutions">
+    <div class="studio-container">
+        <ul class="solutions-index-grid">
+            {% for solution in solutions %}
+            <li>
+                <a class="solution-tile" href="{% url 'web:solution_detail' solution.slug %}">
+                    <span class="solution-tile-media">{% if solution.image %}<img src="{% static solution.image %}" alt="" width="1536" height="1024" decoding="async"{% if forloop.counter > 3 %} loading="lazy"{% endif %}>{% endif %}</span>
+                    <span class="solution-tile-body">
+                        <span class="solution-tile-meta"><span class="solution-tile-number">{{ solution.number }}</span>{% if solution.eyebrow %}<span class="eyebrow">{{ solution.eyebrow }}</span>{% endif %}</span>
+                        <h2>{{ solution.title }}</h2>
+                        {% if solution.description %}<p>{{ solution.description }}</p>{% endif %}
+                        <span class="solution-tile-more">Explore <span aria-hidden="true">&#8599;</span></span>
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+            <li class="solutions-index-cta">
+                <a class="solution-tile solution-tile-cta" href="{% url 'web:connect' %}">
+                    <span class="solution-tile-body">
+                        <span class="eyebrow">NOT SURE WHERE TO START?</span>
+                        <h2>Tell us what you&#8217;re working towards.</h2>
+                        <p>Many projects sit between these solutions. Share the problem you want to solve and we&#8217;ll help you find the right way forward.</p>
+                        <span class="solution-tile-more">Start a conversation <span aria-hidden="true">&#8599;</span></span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

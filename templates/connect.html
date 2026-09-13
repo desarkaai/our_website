@@ -1,183 +1,97 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="min-h-[70vh] flex items-center justify-center px-4 py-16">
-    <div class="text-center max-w-7xl mx-auto">
-        <h1 class="font-inter text-5xl md:text-7xl font-bold uppercase text-black mb-6">
-            Connect
-        </h1>
-        <p class="font-raleway text-xl md:text-2xl text-[#212529] mb-12">
-            Let's Build Something Amazing Together
-        </p>
-
-        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start text-left mb-16">
-            <!-- Left Side: Contact Information -->
-            <div class="w-full lg:w-1/3 space-y-8">
-                <div>
-                    <h2 class="font-inter text-3xl font-bold uppercase text-black mb-6">Contact Us</h2>
-                    <p class="font-raleway text-lg text-[#212529]">
-                        Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as
-                        possible.
-                    </p>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Phone 1 -->
-                    <div class="flex items-start gap-4 p-4 border-l-4 border-[#E12726] bg-gray-50 rounded-r-lg">
-                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-inter text-sm font-bold uppercase tracking-wider text-black">Phone</h3>
-                            <a href="tel:+919084267116"
-                                class="font-raleway text-[#E12726] font-bold text-lg hover:underline">
-                                +91 90842 67116
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Phone 2 -->
-                    <div class="flex items-start gap-4 p-4 border-l-4 border-[#E12726] bg-gray-50 rounded-r-lg">
-                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-inter text-sm font-bold uppercase tracking-wider text-black">Alternate Phone
-                            </h3>
-                            <a href="tel:+918433103382"
-                                class="font-raleway text-[#E12726] font-bold text-lg hover:underline">
-                                +91 84331 03382
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="flex items-start gap-4 p-4 border-l-4 border-[#E12726] bg-gray-50 rounded-r-lg">
-                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-inter text-sm font-bold uppercase tracking-wider text-black">Email</h3>
-                            <a href="mailto:desarka.co.in@gmail.com"
-                                class="font-raleway text-[#E12726] font-bold text-lg hover:underline">
-                                desarka.co.in@gmail.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<!-- Contact details + project form, sized to fit one screen -->
+<section class="connect-page studio-container" aria-labelledby="connect-heading">
+    <div class="connect-info">
+        <p class="eyebrow">CONNECT</p>
+        <h1 id="connect-heading">Let&#8217;s build <em>your project</em> together<span>.</span></h1>
+        <p class="connect-lead">Tell us what you&#8217;re working towards, and we&#8217;ll get back to you to talk it through.</p>
+        <dl class="connect-details">
+            <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+919084267116">+91 90842 67116</a><span aria-hidden="true"> &middot; </span><a href="tel:+918433103382">+91 84331 03382</a></dd>
             </div>
+            <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:desarka.co.in@gmail.com">desarka.co.in@gmail.com</a></dd>
+            </div>
+            <div>
+                <dt>WhatsApp</dt>
+                <dd><a href="https://wa.me/919084267116?text=Hi%20Desarka%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">Chat with us <span aria-hidden="true">&#8599;</span></a></dd>
+            </div>
+            <div>
+                <dt>Office</dt>
+                <dd><address>A-1, Yamuna Vihar, Bhur Ka Bagh, G.G. Puram, Kamla Nagar, Agra, Uttar Pradesh 282005</address></dd>
+            </div>
+        </dl>
+    </div>
 
-            <!-- Right Side: Contact Form -->
-            <div
-                class="flex-1 w-full bg-white border-2 border-black rounded-[20px] overflow-hidden shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
-                <div class="bg-black py-4 px-6">
-                    <h2 class="font-inter text-xl font-bold uppercase text-white">
-                        Send us a Message
-                    </h2>
-                </div>
+    <div class="connect-form-wrap">
+        <form class="contact-form" action="https://formspree.io/f/xjgeaanp" method="POST">
+            <input type="hidden" name="_subject" value="New enquiry from desarka website (Connect page)">
+            <div class="cf-row">
+                <label class="sr-only" for="cp-name">Full name</label>
+                <input id="cp-name" type="text" name="name" placeholder="Full Name" autocomplete="name" required>
+                <label class="sr-only" for="cp-email">Official email address</label>
+                <input id="cp-email" type="email" name="email" placeholder="Official Email Address" autocomplete="email" required>
+            </div>
+            <div class="cf-row">
+                <label class="sr-only" for="cp-phone">Phone number</label>
+                <input id="cp-phone" type="tel" name="phone" placeholder="Phone Number" autocomplete="tel">
+                <label class="sr-only" for="cp-region">Your region</label>
+                <select id="cp-region" name="region">
+                    <option value="" selected>Your Region</option>
+                    <option>Agra &amp; Uttar Pradesh</option>
+                    <option>Delhi NCR</option>
+                    <option>Rest of India</option>
+                    <option>Outside India</option>
+                </select>
+            </div>
+            <div class="cf-row">
+                <label class="sr-only" for="cp-company">Company type</label>
+                <select id="cp-company" name="company_type">
+                    <option value="" selected>Company Type</option>
+                    <option>Startup</option>
+                    <option>Small or medium business</option>
+                    <option>Enterprise</option>
+                    <option>Educational institution</option>
+                    <option>Other</option>
+                </select>
+                <label class="sr-only" for="cp-source">How did you hear about us?</label>
+                <select id="cp-source" name="source">
+                    <option value="" selected>How did you hear about us?</option>
+                    <option>Google Search</option>
+                    <option>Google Maps</option>
+                    <option>JustDial</option>
+                    <option>Referral</option>
+                    <option>Social media</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <label class="sr-only" for="cp-brief">Tell us about your company and project</label>
+            <textarea id="cp-brief" name="message" rows="4" placeholder="Tell us more about your company and project brief" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
 
-                <form action="https://formspree.io/f/xjgeaanp" method="POST" class="p-6 md:p-10 space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Name -->
-                        <div class="space-y-2">
-                            <label for="name"
-                                class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
-                                Full Name
-                            </label>
-                            <input type="text" name="name" id="name" required
-                                class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway"
-                                placeholder="Enter your full name">
-                        </div>
-
-                        <!-- Email -->
-                        <div class="space-y-2">
-                            <label for="email"
-                                class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
-                                Email Address
-                            </label>
-                            <input type="email" name="email" id="email" required
-                                class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway"
-                                placeholder="Enter your email address">
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Phone -->
-                        <div class="space-y-2">
-                            <label for="phone"
-                                class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
-                                Phone Number
-                            </label>
-                            <input type="tel" name="phone" id="phone"
-                                class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway"
-                                placeholder="Enter your phone number">
-                        </div>
-
-                        <!-- Subject -->
-                        <div class="space-y-2">
-                            <label for="subject"
-                                class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
-                                Subject
-                            </label>
-                            <select name="subject" id="subject"
-                                class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway bg-white">
-                                <option value="General Inquiry">General Inquiry</option>
-                                <option value="Request a Quote">Request a Quote</option>
-                                <option value="Technical Support">Technical Support</option>
-                                <option value="Partnership">Partnership</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="space-y-2">
-                        <label for="message" class="font-raleway text-sm font-bold uppercase tracking-wider text-black">
-                            Your Message
-                        </label>
-                        <textarea name="message" id="message" rows="5" required
-                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-0 focus:border-[#E12726] transition-colors font-raleway resize-none"
-                            placeholder="Type your message here..."></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="pt-4">
-                        <button type="submit"
-                            class="group relative inline-flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full font-roboto font-bold text-lg hover:bg-[#E12726] transition-all duration-300 transform hover:-translate-y-1">
-                            <span>Send Message</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="group-hover:translate-x-2 transition-transform">
-                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
+<!-- Small map card -->
+<section class="connect-map studio-container" aria-labelledby="visit-us-heading">
+    <div class="connect-map-card">
+        <div class="connect-map-frame">
+            <iframe src="https://www.google.com/maps?q=Desarka+(27.2299505,78.0212989)&amp;ll=27.2299505,78.0212989&amp;z=16&amp;hl=en&amp;output=embed"
+                title="Desarka location on Google Maps" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="connect-map-text">
+            <p class="eyebrow">VISIT US</p>
+            <h2 id="visit-us-heading">Find Desarka in Agra</h2>
+            <address>A-1, Yamuna Vihar, Bhur Ka Bagh, G.G. Puram, Kamla Nagar, Agra, Uttar Pradesh 282005</address>
+            <div class="connect-map-actions">
+                <a class="hero-btn-primary" href="https://www.google.com/maps/place/Desarka/@27.2299505,78.0212989,17z/data=!4m6!3m5!1s0x39747bdaf9f5853f:0x17842daa7fb65983!8m2!3d27.2299505!4d78.0212989!16s%2Fg%2F11zxm12hzv" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">&#8599;</span></a>
+                <a class="hero-btn-secondary" href="https://www.google.com/maps/dir/?api=1&amp;destination=27.2299505,78.0212989" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">&#8599;</span></a>
             </div>
         </div>
-
-        <!-- Back to Home -->
-        <a href="/"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-black hover:bg-black hover:text-white transition-colors">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="2" />
-            </svg>
-            <span class="font-roboto text-lg font-medium leading-6">Back to Home</span>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 20L25 20M25 20L20 15M25 20L20 25" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </a>
     </div>
 </section>
 {% endblock %}

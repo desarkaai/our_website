@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_description %}{{ solution.title }} by Desarka. {{ solution.headline|default:solution.description }}{% endblock %}
+
+{% block content %}
+<div class="solution-page">
+
+    <nav class="studio-breadcrumb studio-container" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="{% url 'web:index' %}">Home</a></li>
+            <li><a href="{% url 'web:solutions' %}">Solutions</a></li>
+            <li><a href="{% url 'web:solution_detail' solution.slug %}" aria-current="page">{{ solution.title }}</a></li>
+        </ol>
+    </nav>
+
+    <header class="solution-hero studio-container">
+        <div class="solution-hero-title">
+            {% if solution.eyebrow %}<p class="eyebrow">{{ solution.eyebrow }}</p>{% endif %}
+            <h1>{{ solution.title }}<span>.</span></h1>
+        </div>
+        <div class="solution-hero-copy">
+            {% if solution.headline %}
+            <p class="solution-headline">{{ solution.headline }}</p>
+            {% elif solution.description %}
+            <p class="solution-headline">{{ solution.description }}</p>
+            {% endif %}
+            {% if solution.intro %}
+            {% for paragraph in solution.intro %}<p>{{ paragraph }}</p>{% endfor %}
+            {% elif solution.detail %}
+            <p>{{ solution.detail }}</p>
+            {% endif %}
+            <a class="text-link" href="{% url 'web:connect' %}">Talk to us about your project <span aria-hidden="true">&#8599;</span></a>
+        </div>
+    </header>
+
+    {% if solution.image %}
+    <figure class="solution-figure studio-container">
+        <img src="{% static solution.image %}" alt="{{ solution.image_alt|default:'' }}" width="1536" height="1024" fetchpriority="high" decoding="async">
+    </figure>
+    {% endif %}
+
+    {% if solution.outcomes %}
+    <section class="solution-block studio-container" aria-labelledby="solution-outcomes-title">
+        <div class="solution-block-head">
+            <h2 id="solution-outcomes-title">What changes</h2>
+            <p>What your business can expect once the right system is in place.</p>
+        </div>
+        <div class="solution-outcomes">
+            {% for outcome in solution.outcomes %}
+            <div class="solution-outcome">
+                <h3>{{ outcome.title }}</h3>
+                {% if outcome.text %}<p>{{ outcome.text }}</p>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if solution.capabilities or solution.features %}
+    <section class="solution-band" aria-labelledby="solution-capabilities-title">
+        <div class="studio-container">
+            <div class="solution-block-head">
+                <h2 id="solution-capabilities-title">What we build</h2>
+                <p>Every system is shaped around how your team already works. These are the parts we most often bring together.</p>
+            </div>
+            <ul class="solution-capabilities">
+                {% if solution.capabilities %}
+                {% for capability in solution.capabilities %}
+                <li>
+                    <h3>{{ capability.title }}</h3>
+                    {% if capability.text %}<p>{{ capability.text }}</p>{% endif %}
+                </li>
+                {% endfor %}
+                {% else %}
+                {% for feature in solution.features %}<li><h3>{{ feature }}</h3></li>{% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if solution.process %}
+    <section class="solution-block studio-container" aria-labelledby="solution-process-title">
+        <div class="solution-block-head">
+            <h2 id="solution-process-title">How we work</h2>
+            <p>A clear path from the first conversation to launch, and the improvements that follow.</p>
+        </div>
+        <ol class="solution-process">
+            {% for step in solution.process %}
+            <li>
+                <span class="solution-step" aria-hidden="true">{{ step.step|default:forloop.counter }}</span>
+                <h3>{{ step.title }}</h3>
+                {% if step.text %}<p>{{ step.text }}</p>{% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </section>
+    {% endif %}
+
+    {% if related_case_studies %}
+    <section class="solution-block studio-container" aria-labelledby="solution-work-title">
+        <div class="solution-block-head">
+            <h2 id="solution-work-title">Related work</h2>
+            <p>Client projects where we built something along these lines.</p>
+        </div>
+        <ul class="solution-work">
+            {% for study in related_case_studies %}
+            <li>
+                <a class="solution-work-card" href="{% url 'web:case_study' study.slug %}">
+                    <span class="solution-work-logo">{% if study.logo %}<img src="{% static study.logo %}" alt="" loading="lazy" decoding="async">{% endif %}</span>
+                    <span class="solution-work-body">
+                        <h3>{{ study.client }}</h3>
+                        {% if study.engagement %}<p>{{ study.engagement }}</p>{% endif %}
+                        <span class="solution-work-more">Read the case study <span aria-hidden="true">&#8599;</span></span>
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {% if solution.faqs %}
+    <section class="solution-block studio-container" aria-labelledby="solution-faq-title">
+        <div class="solution-faq-grid">
+            <div class="solution-faq-intro">
+                <h2 id="solution-faq-title">Common questions</h2>
+                <p>Something we have not covered? <a href="{% url 'web:connect' %}">Ask us directly</a>.</p>
+            </div>
+            <div class="solution-faqs">
+                {% for faq in solution.faqs %}
+                <details class="solution-faq"{% if forloop.first %} open{% endif %}>
+                    <summary>{{ faq.q }}</summary>
+                    <div class="solution-faq-answer"><p>{{ faq.a }}</p></div>
+                </details>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if prev_solution and next_solution %}
+    <nav class="solution-pager studio-container" aria-label="More solutions">
+        <a class="solution-pager-card" href="{% url 'web:solution_detail' prev_solution.slug %}">
+            <span class="solution-pager-label"><span aria-hidden="true">&#8592;</span> Previous solution</span>
+            <span class="solution-pager-title">{{ prev_solution.title }}</span>
+            {% if prev_solution.description %}<span class="solution-pager-text">{{ prev_solution.description }}</span>{% endif %}
+        </a>
+        <a class="solution-pager-card is-next" href="{% url 'web:solution_detail' next_solution.slug %}">
+            <span class="solution-pager-label">Next solution <span aria-hidden="true">&#8594;</span></span>
+            <span class="solution-pager-title">{{ next_solution.title }}</span>
+            {% if next_solution.description %}<span class="solution-pager-text">{{ next_solution.description }}</span>{% endif %}
+        </a>
+    </nav>
+    {% endif %}
+
+    <section class="solution-cta-band" aria-labelledby="solution-cta-title">
+        <div class="studio-container solution-cta-inner">
+            <div>
+                <h2 id="solution-cta-title">Tell us what you&#8217;re working towards<span>.</span></h2>
+                <p>Share where things stand today and where you would like them to be. We&#8217;ll help you find a sensible first step.</p>
+            </div>
+            <a class="studio-button" href="{% url 'web:connect' %}">Start a conversation <span aria-hidden="true">&#8599;</span></a>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

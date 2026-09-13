@@ -3,6 +3,8 @@
 
 {% block content %}
 
+<div class="cs-hero">
+{% if study.cover %}<div class="cs-hero-bg" style="background-image:url('{% static study.cover %}')" aria-hidden="true"></div>{% endif %}
 <!-- Breadcrumb -->
 <nav class="max-w-7xl mx-auto px-4 md:px-12 lg:px-8 pt-8 md:pt-12" aria-label="Breadcrumb">
     <ol class="flex items-center gap-2 font-inter text-sm text-gray-500">
@@ -55,6 +57,7 @@
         </div>
     </div>
 </header>
+</div>
 
 <!-- Fact strip -->
 <section class="bg-gray-50 border-y border-gray-200">

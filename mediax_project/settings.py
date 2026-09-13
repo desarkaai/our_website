@@ -27,7 +27,27 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-xw^72yp6uu&@t86y=2r*g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', 'desarka.ai', 'www.desarka.ai']
+ALLOWED_HOSTS = [
+    '.vercel.app', 'localhost', '127.0.0.1',
+    'desarka.com', 'www.desarka.com', 'desarka.ai', 'www.desarka.ai',
+]
+
+# Needed for any Django form POST (e.g. /admin/ login) on the live domains.
+CSRF_TRUSTED_ORIGINS = [
+    'https://desarka.com', 'https://www.desarka.com', 'https://*.vercel.app',
+    'https://desarka.ai', 'https://www.desarka.ai',
+]
+
+# Vercel terminates HTTPS at its edge and forwards the original scheme in this header.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Production-only HTTPS hardening (Vercel always serves HTTPS). Left off in DEBUG so
+# local http://127.0.0.1 development keeps working. HSTS is intentionally not enabled:
+# once browsers cache it, it cannot be quickly undone.
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 
 # Application definition
@@ -66,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'web.context_processors.static_version',
             ],
         },
     },
@@ -126,7 +147,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Whitenoise configuration
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 
